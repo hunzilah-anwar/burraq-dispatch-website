@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.svg";
-import { Menu, X } from "lucide-react";
+import {
+  ArrowDownIcon,
+  Menu,
+  X,
+} from "lucide-react";
+import { servicesData } from "../data/servicesData";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("/");
   const [isSticky, setIsSticky] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+
+  const location = useLocation();
+  const isServicesActive = location.pathname.startsWith("/services");
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -49,26 +58,63 @@ const Header = () => {
           <ul className="hidden md:flex items-center gap-8 text-lg font-semibold">
             {navLinks.map((link) => (
               <li className="relative group text-[16px]" key={link.path}>
-                <NavLink
-                  to={link.path}
-                  onClick={() => setActiveLink(link.path)}
-                  className={`${
-                    activeLink === link.path ? "text-main" : "text-primary"
-                  }
-                  ${isSticky ? "text-primary" : "text-white"}`}
-                >
-                  {link.name}
-                </NavLink>
+                <NavLink to={link.path}>
+                  {({ isActive }) => (
+                    <>
+                      <span
+                        className={`transition-colors duration-300 ${
+                          isSticky ? "text-primary" : "text-white"
+                        }`}
+                      >
+                        {link.name}
+                      </span>
 
-                <span
-                  className={`absolute left-0 -bottom-1 h-0.5 bg-main transition-all duration-300 ${
-                    activeLink === link.path
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
-                  }`}
-                ></span>
+                      <span
+                        className={`absolute left-0 -bottom-1 h-0.5 bg-main transition-all duration-300 ${
+                          isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
+                      />
+                    </>
+                  )}
+                </NavLink>
               </li>
             ))}
+
+            <li
+              className="relative group"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button
+                className={`font-semibold cursor-pointer transition-colors duration-300 ${
+                  isSticky ? "text-primary" : "text-white"
+                }`}
+              >
+                Services
+              </button>
+
+              <span
+                className={`absolute left-0 -bottom-1 h-0.5 bg-main transition-all duration-300 ${
+                  isServicesActive ? "w-full" : "w-0 group-hover:w-full"
+                }`}
+              />
+
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 pt-4 w-72 z-50">
+                  <div className="bg-white shadow-xl border border-gray-200 font-roboto-condensed">
+                    {servicesData.map((service) => (
+                      <Link
+                        key={service.id}
+                        to={`/services/${service.slug}`}
+                        className="block px-5 py-4 text-primary hover:bg-gray-100 border-b border-gray-100 last:border-b-0"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </li>
           </ul>
 
           {/* Desktop CTA */}
@@ -83,7 +129,9 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="hover:text-main md:hidden cursor-pointer transition ease-in-out duration-300 hover:scale-110"
+              className={`hover:text-main md:hidden cursor-pointer transition ease-in-out duration-300 hover:scale-110 ${
+                isSticky ? "text-primary" : "text-white"
+              } `}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -94,7 +142,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-72 bg-white shadow-xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-screen w-72 bg-white shadow-xl z-50 transform transition-transform duration-300 overflow-y-auto ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -107,7 +155,7 @@ const Header = () => {
           </button>
         </div>
 
-        <ul className="flex flex-col gap-6 px-6 py-4 text-lg font-semibold">
+        <ul className="flex flex-col gap-6 px-6 py-4 text-lg font-semibold overflow-auto">
           {navLinks.map((link) => (
             <li key={link.path}>
               <NavLink
@@ -121,6 +169,43 @@ const Header = () => {
               </NavLink>
             </li>
           ))}
+          <li>
+            <button
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+              className={`flex items-center justify-between w-full ${
+                isServicesActive ? "text-main" : "text-primary"
+              }`}
+            >
+              Services
+              <span
+                className={`transition-transform duration-300 ${
+                  isMobileServicesOpen ? "rotate-180" : ""
+                }`}
+              >
+                <ArrowDownIcon size={20} />
+              </span>
+            </button>
+
+            {isMobileServicesOpen && (
+              <div className="mt-3 ml-4 flex flex-col gap-3">
+                {servicesData.map((service) => (
+                  <NavLink
+                    key={service.id}
+                    to={`/services/${service.slug}`}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setIsMobileServicesOpen(false);
+                    }}
+                    className={({ isActive }) =>
+                      isActive ? "text-main font-semibold" : "text-gray-600"
+                    }
+                  >
+                    {service.title}
+                  </NavLink>
+                ))}
+              </div>
+            )}
+          </li>
 
           <Link
             to="/contact"

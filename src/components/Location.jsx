@@ -66,22 +66,22 @@ const Location = () => {
               Serving Major Freight Corridors
             </h3>
 
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-3 gap-4 mb-8">
               {locations.map((location) => (
                 <button
                   key={location.name}
                   onClick={() => setSelectedLocation(location)}
                   className={`flex items-center gap-3 p-4 border transition-all duration-300 cursor-pointer ${
                     selectedLocation.name === location.name
-                      ? "bg-main text-white border-main"
+                      ? "bg-gray-300 text-primary border-gray-300"
                       : "bg-white text-primary border-gray-300 hover:bg-gray-100"
                   }`}
                 >
                   <span
                     className={`w-3 h-3 rounded-full ${
                       selectedLocation.name === location.name
-                        ? "bg-white"
-                        : "bg-main"
+                        ? "bg-main"
+                        : "bg-white"
                     }`}
                   ></span>
 

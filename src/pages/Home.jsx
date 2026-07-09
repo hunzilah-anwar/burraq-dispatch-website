@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { servicesData } from "../data/servicesData";
 import Location from "../components/Location";
+import Testimonial from "../components/Testimonial";
 
 const Home = () => {
   const features = [
@@ -364,6 +365,7 @@ const Home = () => {
         </div>
       </section>
       <Location />
+      <Testimonial />
     </>
   );
 };
