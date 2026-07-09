@@ -7,7 +7,7 @@ import {
   Target,
   Eye,
 } from "lucide-react";
-
+import Testimonial from "../components/Testimonial";
 import aboutImg from "../assets/flatbed-hero-scaled.jpg";
 
 const About = () => {
@@ -51,13 +51,9 @@ const About = () => {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center px-4">
-          <span className="text-secondary uppercase tracking-[5px] font-semibold">
-            About Us
-          </span>
-
           <h1 className="text-4xl md:text-7xl font-bold text-white mt-4">
             Buraq Dispatch LLC
           </h1>
@@ -71,9 +67,9 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-24">
+      <section className="py-24 bg-gray-100">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-14">
             <div>
               <span className="text-main uppercase font-semibold tracking-wider">
                 Who We Are
@@ -103,7 +99,7 @@ const About = () => {
               <img
                 src={aboutImg}
                 alt="About"
-                className="w-full h-137.5 object-cover shadow-xl"
+                className="w-full h-110 object-cover shadow-xl"
               />
             </div>
           </div>
@@ -111,13 +107,13 @@ const About = () => {
       </section>
 
       {/* Statistics */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-8 text-center shadow-lg"
+                className="bg-white p-8 text-center"
               >
                 <h3 className="text-5xl font-bold text-main mb-3">
                   {item.number}
@@ -133,7 +129,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-100">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-main uppercase tracking-widest font-semibold">
@@ -203,21 +199,23 @@ const About = () => {
         </div>
       </section>
 
+      <Testimonial />
+
       {/* CTA */}
-      <section className="py-24 bg-primary text-center">
+      <section className="py-20 bg-gray-50 text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-white mb-6">
+          <h2 className="text-5xl font-bold mb-6">
             Ready To Grow Your Trucking Business?
           </h2>
 
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             Let our experienced dispatch team help you find better loads,
             increase profits, and keep your trucks moving.
           </p>
 
           <Link
             to="/contact"
-            className="inline-block bg-main px-10 py-4 text-white font-bold hover:opacity-90 transition"
+            className="inline-block bg-main px-10 py-4 text-white font-bold hover:bg-secondary transition"
           >
             Get A Free Quote
           </Link>

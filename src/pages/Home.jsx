@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import HeroImg from "../assets/hero.jpg";
 import TruckHaulingImg from "../assets/Truck-Hauling.webp";
 import flatbedHeroImg from "../assets/flatbed-hero-scaled.jpg";
@@ -22,57 +22,6 @@ import Location from "../components/Location";
 import Testimonial from "../components/Testimonial";
 
 const Home = () => {
-  const features = [
-    {
-      icon: Truck,
-      text: "Over 150,000 Trucks Nationwide",
-    },
-    {
-      icon: MapPin,
-      text: "Multiple Locations Nationwide",
-    },
-    {
-      icon: Headphones,
-      text: "7-Day Customer Service Extended Hours",
-    },
-    {
-      icon: Users,
-      text: "30,000 Contracted Carriers",
-    },
-    {
-      icon: UserCheck,
-      text: "One-on-One Logistics Specialists",
-    },
-    {
-      icon: CreditCard,
-      text: "Flexible Payment Options",
-    },
-    {
-      icon: Star,
-      text: "5/5 Star Rated Business",
-    },
-    {
-      icon: Shield,
-      text: "Contingent Cargo Insurance",
-    },
-    {
-      icon: Award,
-      text: "Top 100 Freight Brokerage",
-    },
-    {
-      icon: Building2,
-      text: "A+ Rated - BBB Accredited",
-    },
-    {
-      icon: Route,
-      text: "Diversified Trucking Options",
-    },
-    {
-      icon: TrendingUp,
-      text: "Inc. 5000 Fastest Growing Company 3 Years In A Row",
-    },
-  ];
-
   return (
     <>
       <section
@@ -195,7 +144,7 @@ const Home = () => {
         </div>
       </section>
       <section className="md:p-20 p-10 bg-[rgba(240,227,211,.5)] font-roboto-condensed">
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
           <div className="w-full h-full">
             <img
               src={TruckHaulingImg}
@@ -203,60 +152,59 @@ const Home = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div>
+          <div className="lg:col-span-2 flex flex-col justify-start">
             <h2 className="text-lg font-bold mb-1 text-main">
               Nationwide Transport Services
             </h2>
             <h2 className="text-2xl font-bold mb-4">
-              Why Choose Buraq Dispatch LLC?
+              What Are They? A Brief Handbook for American Truck Drivers
             </h2>
             <p className="text-lg mb-2 text-gray-600">
-              Nationwide Transport Services is proud to serve you as a
-              third-party trucking broker. We specialize in freight shipping,
-              heavy hauling, and auto transportation solutions.
-              <br />
-              <br />
-              Our logistics services have been at the top of the industry for
-              over a decade. We're dedicated to building our reputation as the
-              standard for trucking brokers and transportation solution
-              providers. We know that few orders are the same, so we look at
-              every request with an eye for detail and precision.
+              In the United States, truckers frequently deal with empty miles
+              and copious paperwork. Dispatch services intervene to rectify
+              that. They negotiate rates, look for high-paying loads, and deal
+              with bureaucratic red tape. <br /> <br /> They keep your rig
+              moving while you concentrate on the road. Imagine rolling out with
+              a good haul by morning, rather than waiting days for a job.
             </p>
           </div>
         </div>
       </section>
-      <section className="py-20 bg-white font-roboto-condensed">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-14">
-            <span className="text-main font-semibold uppercase tracking-widest">
-              Why Choose Us
-            </span>
+      {/* Service Details */}
+      <section className="py-24 bg-white">
+        <div className="text-center max-w-5xl mx-auto px-6 mb-20">
+          <h1 className="font-black text-4xl ">Truck Dispatching Service for Owner Operator</h1>
+          <p className="text-gray-500">
+            One size never fits all in freight. We tailor dispatch to your trailer and cargo—dry vans to heavies. Nationwide brokers mean steady access to lanes like I-80 corridors or Gulf Coast runs.
+          </p>
+        </div>
+        <div className="max-w-7xl mx-auto px-6">
+          {servicesData.map((service) => (
+            <div className="grid lg:grid-cols-5 gap-15 mb-6 bg-gray-100 p-8 border border-gray-300">
+              {/* Left Content */}
+              <div className="lg:col-span-3">
 
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mt-3">
-              Trusted Freight & Dispatch Solutions
-            </h2>
-          </div>
+                <h2 className="text-2xl lg:text-3xl font-black text-slate-900 leading-tight">
+                  {service.title}
+                </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {features.map((item, index) => {
-              const Icon = item.icon;
+                <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
 
-              return (
-                <div
-                  key={index}
-                  className="group flex flex-col items-center gap-4 p-6 border border-gray-200 hover:border-main hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-14 h-14 flex items-center justify-center bg-main/10 text-main shrink-0 group-hover:bg-main group-hover:text-white transition-all duration-300">
-                    <Icon size={28} />
-                  </div>
-
-                  <p className="font-semibold text-primary leading-relaxed text-center">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+              {/* Right Gallery */}
+              <div
+                className={`col-span-2 overflow-hidden h-70`}
+              >
+                <img
+                  src={service.gallery[0]}
+                  alt={`${service.title}`}
+                  className="w-full h-full object-cover transition duration-700 hover:scale-110"
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       <section className="py-20 bg-gray-50 font-roboto-condensed">
@@ -291,7 +239,9 @@ const Home = () => {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-200 mb-5">{service.shortDescription}</p>
+                  <p className="text-gray-200 mb-5">
+                    {service.shortDescription}
+                  </p>
 
                   <button className="inline-flex items-center gap-2 text-secondary font-semibold border-b-2 border-secondary pb-1 cursor-pointer hover:text-main hover:border-main transition">
                     Learn More →
