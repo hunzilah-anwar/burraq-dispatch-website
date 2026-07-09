@@ -84,16 +84,16 @@ const Home = () => {
         }}
       >
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-10 md:mb-0">
+          <div className="flex flex-col lg:flex-row items-center">
+            <div className="lg:w-1/2 mb-10 md:mb-0">
               <h4 className="text-xl font-semibold text-white mb-2 font-roboto-condensed">
                 Professional Transportation Service
               </h4>
-              <h1 className="text-8xl font-bold mb-4 text-white">
+              <h1 className="md:text-8xl text-6xl font-bold mb-4 text-white">
                 Welcome To Buraq{" "}
                 <span className="text-stroke">Dispatch LLC</span>
               </h1>
-              <p className="text-lg text-gray-200 font-roboto-condensed">
+              <p className="text-lg text-gray-100 font-roboto-condensed">
                 We provide top-notch dispatch services for your business needs.
                 Our team is dedicated to ensuring timely and efficient delivery
                 of your goods.
@@ -106,7 +106,7 @@ const Home = () => {
               </Link>
             </div>
             <div className="flex items-center justify-end w-full translate-y-[20%]">
-              <div className="md:w-1/2 w-full max-w-lg shadow-xl">
+              <div className="lg:w-1/2 w-full max-w-lg shadow-xl">
                 <h2 className="text-3xl font-bold text-white py-8 px-8 bg-main">
                   Request a Quote
                 </h2>
