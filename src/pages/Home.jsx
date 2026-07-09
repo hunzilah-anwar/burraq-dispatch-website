@@ -291,7 +291,7 @@ const Home = () => {
                     {service.title}
                   </h3>
 
-                  <p className="text-gray-200 mb-5">{service.description}</p>
+                  <p className="text-gray-200 mb-5">{service.shortDescription}</p>
 
                   <button className="inline-flex items-center gap-2 text-secondary font-semibold border-b-2 border-secondary pb-1 cursor-pointer hover:text-main hover:border-main transition">
                     Learn More →
