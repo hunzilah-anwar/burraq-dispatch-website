@@ -4,18 +4,6 @@ import TruckHaulingImg from "../assets/Truck-Hauling.webp";
 import flatbedHeroImg from "../assets/flatbed-hero-scaled.jpg";
 
 import {
-  Truck,
-  MapPin,
-  Headphones,
-  Users,
-  UserCheck,
-  CreditCard,
-  Star,
-  Shield,
-  Award,
-  Building2,
-  Route,
-  TrendingUp,
   Circle,
 } from "lucide-react";
 import { servicesData } from "../data/servicesData";
