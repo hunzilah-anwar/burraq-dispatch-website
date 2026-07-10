@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HeroImg from "../assets/hero.jpg";
 import TruckHaulingImg from "../assets/Truck-Hauling.webp";
 import flatbedHeroImg from "../assets/flatbed-hero-scaled.jpg";
@@ -16,6 +16,7 @@ import {
   Building2,
   Route,
   TrendingUp,
+  Circle,
 } from "lucide-react";
 import { servicesData } from "../data/servicesData";
 import Location from "../components/Location";
@@ -163,39 +164,74 @@ const Home = () => {
               In the United States, truckers frequently deal with empty miles
               and copious paperwork. Dispatch services intervene to rectify
               that. They negotiate rates, look for high-paying loads, and deal
-              with bureaucratic red tape. <br /> <br /> They keep your rig
-              moving while you concentrate on the road. Imagine rolling out with
-              a good haul by morning, rather than waiting days for a job.
+              with bureaucratic red tape. They keep your rig moving while you
+              concentrate on the road. Imagine rolling out with a good haul by
+              morning, rather than waiting days for a job.
             </p>
+            <h2 className="text-lg font-bold mb-1 text-main">
+              That’s exactly why we started Burraq Dispatch LLC
+            </h2>
+            <p className="text-lg mb-2 text-gray-600">
+              We wanted to give owner operators and small fleets truck dispatching services that actually make sense, no headaches, no games.
+            </p>
+            <ul>
+              <li className="flex items-center gap-2">
+                <Circle className="text-main" size={16} />
+                Steady freight paying
+              </li>
+              <li className="flex items-center gap-2">
+                <Circle className="text-main" size={16} />
+                Loads ready 24/7
+              </li>
+              <li className="flex items-center gap-2">
+                <Circle className="text-main" size={16} />
+                No forced dispatch
+              </li>
+              <li className="flex items-center gap-2">
+                <Circle className="text-main" size={16} />
+                Fixed Percentage fee (nothing hidden)
+              </li>
+              <li className="flex items-center gap-2">
+                <Circle className="text-main" size={16} />
+                No long contracts
+              </li>
+              <li className="flex items-center gap-2">
+                <Circle className="text-main" size={16} />
+                All paperwork, invoicing, and detention pay are handled for you
+              </li>
+            </ul>
           </div>
         </div>
       </section>
       {/* Service Details */}
       <section className="py-24 bg-white">
         <div className="text-center max-w-5xl mx-auto px-6 mb-20">
-          <h1 className="font-black text-4xl ">Truck Dispatching Service for Owner Operator</h1>
+          <h1 className="font-black text-4xl mb-4">
+            Truck Dispatching Service for Owner Operator
+          </h1>
           <p className="text-gray-500">
-            One size never fits all in freight. We tailor dispatch to your trailer and cargo—dry vans to heavies. Nationwide brokers mean steady access to lanes like I-80 corridors or Gulf Coast runs.
+            One size never fits all in freight. We tailor dispatch to your
+            trailer and cargo dry vans to heavies. Nationwide brokers mean
+            steady access to lanes like I-80 corridors or Gulf Coast runs.
           </p>
         </div>
         <div className="max-w-7xl mx-auto px-6">
           {servicesData.map((service) => (
-            <div className="grid lg:grid-cols-5 gap-15 mb-6 bg-gray-100 p-8 border border-gray-300">
+            <div className="grid lg:grid-cols-5 gap-15 mb-6 bg-gray-100 p-8 rounded-[40px_0px_40px_0px] border border-gray-300">
               {/* Left Content */}
               <div className="lg:col-span-3">
-
-                <h2 className="text-2xl lg:text-3xl font-black text-slate-900 leading-tight">
+                <h2 className="text-2xl lg:text-3xl text-center bg-white py-4 rounded-[40px_0_40px_0] font-black text-primary leading-tight border border-main/50 shadow-[inset_0_0_60px_-15px_rgba(255,5,5,0.52)]">
                   {service.title}
                 </h2>
 
-                <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                <p className="mt-6 text-[16px] text-slate-600 leading-relaxed">
                   {service.description}
                 </p>
               </div>
 
               {/* Right Gallery */}
               <div
-                className={`col-span-2 overflow-hidden h-70`}
+                className={`col-span-2 overflow-hidden rounded-[40px_0px_40px_0px] h-70`}
               >
                 <img
                   src={service.gallery[0]}
@@ -227,7 +263,7 @@ const Home = () => {
                 className="group relative overflow-hidden shadow-lg h-112.5"
               >
                 <img
-                  src={service.image}
+                  src={service.gallery[0]}
                   alt={service.title}
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
                 />

@@ -46,7 +46,7 @@ export const servicesData = [
     heroSubtitle:
       "Our AI-powered step deck dispatch service matches you with high-paying freight, minimizes empty miles, and handles permits and paperwork so you keep rolling profitably. You focus on driving — we handle the hunt.",
     description:
-      "Step deck load dispatch comes with its own headaches — tall loads that don't fit standard trailers, permit hassles, securement worries, and brokers who lowball rates or leave you deadheading. We tailor our dispatch service to your setup, sourcing steady freight like heavy machinery, construction material, and oversize hauls. We negotiate fair rates, manage permits, and handle compliance so you can focus on driving while we handle the hunt.",
+      "Our step deck dispatching service connects you with high paying loads tailored for your equipment. We handle negotiations, paperwork, and route optimization, ensuring minimal deadhead miles. With 24/7 support and real-time tracking, your hauls stay profitable and stress-free. Focus on driving while we secure the best freight for you. Our step deck  service connects you with high paying loads tailored for your equipment. We handle negotiations, paperwork, and route optimization. With 24/7 support and real time tracking your hauls stay profitable every time.",
     whatIsSection: {
       title: "What Are Step Deck & Flatbed Trailers? A Quick Guide",
       intro:
@@ -147,7 +147,7 @@ export const servicesData = [
     heroSubtitle:
       "Temperature-controlled precision for your reefer loads. We provide premium refrigerated freight fast and optimize temperature-sensitive routes, with 24/7 support to protect your cargo and your profits.",
     description:
-      "Chilled goods demand strict temperature logs and tight scheduling. Our reefer dispatching service ensures temperature-sensitive loads are handled with precision — matching you with premium refrigerated freight, managing compliance, and streamlining broker communication. From California farms to East Coast grocers, we keep your reefer loads holding steady at 32-40°F and on schedule, every time.",
+      "Chilled goods demand temp logs. We book Our reefer dispatching service ensures temperature-sensitive loads are handled with precision. We match you with premium refrigerated freight, manage compliance, and streamline communication with brokers. Our dedicated dispatchers work around the clock to keep your reefer loads on schedule. Maximize earnings with our expert load planning. hauls from California farms to East Coast grocers, holding 32-40°F steady. Temperature controlled precision for yourreefer loads. We provide premium refrigerated freight fast and optimize temperature sensitive routes. Our team provides 24/7 support to protect your cargo and profits.",
     whatIsSection: {
       title: "What Is Reefer Dispatch?",
       intro:
@@ -287,7 +287,7 @@ export const servicesData = [
     heroSubtitle:
       "Fast and flexible hot shot dispatching for urgent, small loads and quick turns. We secure priority freight and handle every load from booking to payment — so you stay busy and paid every day.",
     description:
-      "Our hot shot and power-only dispatch service delivers fast, flexible solutions for smaller trucks and owner-operators. We secure high-value, time-sensitive loads while handling all logistics and paperwork from booking to payment. With nationwide coverage, we keep your rig moving and profitable, every day.",
+      "Our hotshot and power-only dispatch service delivers fast, flexible solutions for smaller trucks and owner-operators. We secure high-value, time-sensitive loads while handling all logistics and paperwork. With nationwide coverage, we keep your rig moving and profitable. Trust us to power your hotshot success. Fast and flexible hot shot dispatching for urgent small loads and quick turns. We secure priority freight and handle every load from booking to payment. Our team provides 24/7 support so you stay busy and paid every day.",
     whatIsSection: {
       title: "What Is Hot Shot / Power-Only Dispatch?",
       intro:
@@ -355,7 +355,7 @@ export const servicesData = [
     heroSubtitle:
       "Reliable dry van dispatching that keeps your trailer full and rolling. We match you with consistent, high-paying loads, cut empty miles to almost zero, and handle every detail so you drive worry-free.",
     description:
-      "Our dry van dispatching service pairs you with consistent, high-paying loads across the USA. We manage broker negotiations, load tracking, and documentation so you stay on the road. With AI-driven load matching and 24/7 support, we cut empty miles to almost zero and take care of every detail so you drive worry-free.",
+      "Our dry van dispatching service pairs you with consistent, high-paying loads across the USA. We manage broker negotiations, load tracking, and documentation, so you stay on the road. With AI-driven load matching and 24/7 support, we boost your efficiency. Drive smarter with our seamless dry van solutions. Reliable, caring dry van dispatching that keeps your trailer full and rolling. We match you with consistent high paying loads cut empty miles to almost zero and take care of every detail so you drive worry free.",
     whatIsSection: {
       title: "What Is Dry Van Dispatch?",
       intro:

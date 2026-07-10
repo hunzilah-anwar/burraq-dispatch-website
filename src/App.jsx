@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import Service from "./pages/Service";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/:slug" element={<Service />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>

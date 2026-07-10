@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import aboutImg from "../assets/Truck-Hauling.webp";
+import aboutImg from "../assets/Fleet-owner-1.jpg";
 
 const Contact = () => {
   return (
