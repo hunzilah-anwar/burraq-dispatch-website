@@ -17,9 +17,11 @@ const Header = () => {
   const location = useLocation();
   const isServicesActive = location.pathname.startsWith("/services");
 
-  const navLinks = [
+  const FirstNavLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
+  ];
+  const SecNavLinks = [
     { name: "Blogs", path: "/blog" },
   ];
 
@@ -46,7 +48,7 @@ const Header = () => {
       >
         <nav className="container mx-auto flex items-center justify-between px-4 lg:px-8 py-2">
           {/* Logo */}
-          <Link to="/" className="w-18 h-18">
+          <Link to="/" className={isSticky ? "w-18 h-18" : "w-24 h-24"}>
             <img
               src={Logo}
               alt="Buraq Dispatch LLC"
@@ -56,7 +58,7 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-8 text-lg font-semibold">
-            {navLinks.map((link) => (
+            {FirstNavLinks.map((link) => (
               <li className="relative group text-[16px]" key={link.path}>
                 <NavLink to={link.path}>
                   {({ isActive }) => (
@@ -115,6 +117,29 @@ const Header = () => {
                 </div>
               )}
             </li>
+            {SecNavLinks.map((link) => (
+              <li className="relative group text-[16px]" key={link.path}>
+                <NavLink to={link.path}>
+                  {({ isActive }) => (
+                    <>
+                      <span
+                        className={`transition-colors duration-300 ${
+                          isSticky ? "text-primary" : "text-white"
+                        }`}
+                      >
+                        {link.name}
+                      </span>
+
+                      <span
+                        className={`absolute left-0 -bottom-1 h-0.5 bg-main transition-all duration-300 ${
+                          isActive ? "w-full" : "w-0 group-hover:w-full"
+                        }`}
+                      />
+                    </>
+                  )}
+                </NavLink>
+              </li>
+            ))}
           </ul>
 
           {/* Desktop CTA */}
@@ -156,7 +181,7 @@ const Header = () => {
         </div>
 
         <ul className="flex flex-col gap-6 px-6 py-4 text-lg font-semibold overflow-auto">
-          {navLinks.map((link) => (
+          {FirstNavLinks.map((link) => (
             <li key={link.path}>
               <NavLink
                 to={link.path}
@@ -206,6 +231,19 @@ const Header = () => {
               </div>
             )}
           </li>
+          {SecNavLinks.map((link) => (
+            <li key={link.path}>
+              <NavLink
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  isActive ? "text-main" : "text-primary"
+                }
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
 
           <Link
             to="/contact"

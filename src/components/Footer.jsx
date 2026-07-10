@@ -26,7 +26,7 @@ const Footer = () => {
             <img
               src={Logo}
               alt="Buraq Dispatch LLC"
-              className="w-24 mb-5"
+              className="w-28 mb-1"
             />
 
             <p className="text-gray-300 leading-7">
