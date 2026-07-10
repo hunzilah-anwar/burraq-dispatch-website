@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="space-y-5">
               <div className="flex gap-3">
                 <Phone className="text-main mt-1" size={18} />
-                <span>(123) 456-7890</span>
+                <span>_____________</span>
               </div>
 
               <div className="flex gap-3">
@@ -108,7 +108,7 @@ const Footer = () => {
 
               <div className="flex gap-3">
                 <MapPin className="text-main mt-1" size={18} />
-                <span>United States</span>
+                <span>_____________</span>
               </div>
             </div>
           </div>
