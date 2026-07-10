@@ -58,7 +58,7 @@ const Contact = () => {
                     <h3 className="font-bold text-xl text-primary">
                       Phone Number
                     </h3>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">_____________</p>
                   </div>
                 </div>
 
@@ -68,7 +68,7 @@ const Contact = () => {
                     <h3 className="font-bold text-xl text-primary">
                       Email Address
                     </h3>
-                    <p className="text-gray-600">buraqdispatchllc@gmail.com</p>
+                    <p className="text-gray-600">info@buraqdispatchllc.com</p>
                   </div>
                 </div>
 
@@ -79,7 +79,7 @@ const Contact = () => {
                       Office Location
                     </h3>
                     <p className="text-gray-600">
-                      Houston, Texas, United States
+                      _____________
                     </p>
                   </div>
                 </div>
