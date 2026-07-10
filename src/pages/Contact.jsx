@@ -78,9 +78,7 @@ const Contact = () => {
                     <h3 className="font-bold text-xl text-primary">
                       Office Location
                     </h3>
-                    <p className="text-gray-600">
-                      _____________
-                    </p>
+                    <p className="text-gray-600">_____________</p>
                   </div>
                 </div>
 
@@ -90,9 +88,7 @@ const Contact = () => {
                     <h3 className="font-bold text-xl text-primary">
                       Working Hours
                     </h3>
-                    <p className="text-gray-600">
-                      24/7 Dispatch Support
-                    </p>
+                    <p className="text-gray-600">24/7 Dispatch Support</p>
                   </div>
                 </div>
               </div>
@@ -138,11 +134,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <select className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main">
-                    {servicesData.map((services) => (
-                      <option>{services.title}</option>
-                    ))}
-                  </select>
+                  {servicesData.map((service) => (
+                    <option key={service.id} value={service.slug}>
+                      {service.title}
+                    </option>
+                  ))}
                 </div>
 
                 <div>

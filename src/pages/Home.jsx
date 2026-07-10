@@ -217,7 +217,7 @@ const Home = () => {
         </div>
         <div className="max-w-7xl mx-auto px-6">
           {servicesData.map((service) => (
-            <div className="grid lg:grid-cols-5 gap-15 mb-6 bg-gray-100 p-8 rounded-[40px_0px_40px_0px] border border-gray-300">
+            <div key={service.id} className="grid lg:grid-cols-5 gap-15 mb-6 bg-gray-100 p-8 rounded-[40px_0px_40px_0px] border border-gray-300">
               {/* Left Content */}
               <div className="lg:col-span-3">
                 <h2 className="text-2xl lg:text-3xl text-center bg-white py-4 rounded-[40px_0_40px_0] font-black text-primary leading-tight border border-main/50 shadow-[inset_0_0_60px_-15px_rgba(255,5,5,0.52)]">
