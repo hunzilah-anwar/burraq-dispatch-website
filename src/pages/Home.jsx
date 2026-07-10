@@ -169,7 +169,7 @@ const Home = () => {
               morning, rather than waiting days for a job.
             </p>
             <h2 className="text-lg font-bold mb-1 text-main">
-              That’s exactly why we started Burraq Dispatch LLC
+              That’s exactly why we started Buraq Dispatch LLC
             </h2>
             <p className="text-lg mb-2 text-gray-600">
               We wanted to give owner operators and small fleets truck dispatching services that actually make sense, no headaches, no games.

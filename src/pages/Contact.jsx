@@ -1,11 +1,19 @@
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import aboutImg from "../assets/Fleet-owner-1.jpg";
+import { servicesData } from "../data/servicesData";
 
 const Contact = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-primary font-roboto-condensed" style={{ backgroundImage: `url(${aboutImg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section
+        className="relative h-[70vh] flex items-center justify-center bg-primary font-roboto-condensed"
+        style={{
+          backgroundImage: `url(${aboutImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-center px-4">
           <span className="text-secondary uppercase tracking-[5px] font-semibold">
@@ -60,9 +68,7 @@ const Contact = () => {
                     <h3 className="font-bold text-xl text-primary">
                       Email Address
                     </h3>
-                    <p className="text-gray-600">
-                      info@buraqdispatchllc.com
-                    </p>
+                    <p className="text-gray-600">buraqdispatchllc@gmail.com</p>
                   </div>
                 </div>
 
@@ -85,7 +91,7 @@ const Contact = () => {
                       Working Hours
                     </h3>
                     <p className="text-gray-600">
-                      Monday - Sunday | 24/7 Dispatch Support
+                      24/7 Dispatch Support
                     </p>
                   </div>
                 </div>
@@ -133,13 +139,9 @@ const Contact = () => {
 
                 <div>
                   <select className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main">
-                    <option>Select Service</option>
-                    <option>Freight Shipping</option>
-                    <option>Heavy Haul</option>
-                    <option>Auto Transport</option>
-                    <option>Container Shipping</option>
-                    <option>Flatbed Trucking</option>
-                    <option>International Export</option>
+                    {servicesData.map((services) => (
+                      <option>{services.title}</option>
+                    ))}
                   </select>
                 </div>
 
