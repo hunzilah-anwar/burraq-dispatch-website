@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import HeroImg from "../assets/hero.jpg";
 import TruckHaulingImg from "../assets/Truck-Hauling.webp";
 import flatbedHeroImg from "../assets/flatbed-hero-scaled.jpg";
@@ -11,6 +12,47 @@ import Location from "../components/Location";
 import Testimonial from "../components/Testimonial";
 
 const Home = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    message: ""
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "";
+      const response = await fetch(`${apiUrl}/contact.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Quote request sent successfully!");
+        setFormData({
+          fullName: "", email: "", phone: "", companyName: "", message: ""
+        });
+      } else {
+        alert("Error: " + result.error);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <section
@@ -49,10 +91,14 @@ const Home = () => {
                   Request a Quote
                 </h2>
                 <div className="bg-white px-8 py-8 shadow-xl">
-                  <form className="space-y-8">
+                  <form className="space-y-8" onSubmit={handleSubmit}>
                     <div>
                       <input
                         type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
                         placeholder="Full Name"
                         className="w-full border-b border-gray-300 py-3 outline-none focus:border-main"
                       />
@@ -61,6 +107,10 @@ const Home = () => {
                     <div>
                       <input
                         type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
                         placeholder="Email Address"
                         className="w-full border-b border-gray-300 py-3 outline-none focus:border-main"
                       />
@@ -69,6 +119,9 @@ const Home = () => {
                     <div>
                       <input
                         type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
                         placeholder="Phone Number"
                         className="w-full border-b border-gray-300 py-3 outline-none focus:border-main"
                       />
@@ -77,6 +130,9 @@ const Home = () => {
                     <div>
                       <input
                         type="text"
+                        name="companyName"
+                        value={formData.companyName}
+                        onChange={handleChange}
                         placeholder="Company Name"
                         className="w-full border-b border-gray-300 py-3 outline-none focus:border-main"
                       />
@@ -85,6 +141,9 @@ const Home = () => {
                     <div>
                       <textarea
                         rows="4"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         placeholder="Tell us about your requirements..."
                         className="w-full border-b border-gray-300 py-3 outline-none resize-none focus:border-main"
                       ></textarea>
@@ -92,9 +151,10 @@ const Home = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-primary text-white py-3 font-semibold hover:bg-main cursor-pointer transition"
+                      disabled={loading}
+                      className="w-full bg-primary text-white py-3 font-semibold hover:bg-main cursor-pointer transition disabled:opacity-50"
                     >
-                      Get Free Quote
+                      {loading ? "Sending..." : "Get Free Quote"}
                     </button>
                   </form>
                 </div>

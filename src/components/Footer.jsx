@@ -98,7 +98,7 @@ const Footer = () => {
             <div className="space-y-5">
               <div className="flex gap-3">
                 <Phone className="text-main mt-1" size={18} />
-                <span>_____________</span>
+                <span>(713)309-6773</span>
               </div>
 
               <div className="flex gap-3">

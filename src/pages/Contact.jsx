@@ -1,8 +1,51 @@
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { useState } from "react";
 import aboutImg from "../assets/Fleet-owner-1.jpg";
 import { servicesData } from "../data/servicesData";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    companyName: "",
+    service: servicesData[0]?.slug || "",
+    message: ""
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const apiUrl = import.meta.env.VITE_API_URL || "";
+      const response = await fetch(`${apiUrl}/contact.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Message sent successfully!");
+        setFormData({
+          fullName: "", email: "", phone: "", companyName: "", service: servicesData[0]?.slug || "", message: ""
+        });
+      } else {
+        alert("Error: " + result.error);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -58,7 +101,7 @@ const Contact = () => {
                     <h3 className="font-bold text-xl text-primary">
                       Phone Number
                     </h3>
-                    <p className="text-gray-600">_____________</p>
+                    <p className="text-gray-600">(713)309-6773</p>
                   </div>
                 </div>
 
@@ -100,10 +143,14 @@ const Contact = () => {
                 Request A Free Quote
               </h3>
 
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
                     placeholder="Full Name"
                     className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main"
                   />
@@ -112,6 +159,10 @@ const Contact = () => {
                 <div>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     placeholder="Email Address"
                     className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main"
                   />
@@ -120,6 +171,9 @@ const Contact = () => {
                 <div>
                   <input
                     type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="Phone Number"
                     className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main"
                   />
@@ -128,22 +182,35 @@ const Contact = () => {
                 <div>
                   <input
                     type="text"
+                    name="companyName"
+                    value={formData.companyName}
+                    onChange={handleChange}
                     placeholder="Company Name"
                     className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main"
                   />
                 </div>
 
                 <div>
-                  {servicesData.map((service) => (
-                    <option key={service.id} value={service.slug}>
-                      {service.title}
-                    </option>
-                  ))}
+                  <select 
+                    name="service" 
+                    value={formData.service} 
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 px-5 py-4 outline-none focus:border-main bg-white"
+                  >
+                    {servicesData.map((service) => (
+                      <option key={service.id} value={service.slug}>
+                        {service.title}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <div>
                   <textarea
                     rows="6"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Tell us about your transportation requirements..."
                     className="w-full border border-gray-300 px-5 py-4 outline-none resize-none focus:border-main"
                   ></textarea>
@@ -151,9 +218,10 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-main text-white py-4 font-bold flex items-center justify-center gap-2 hover:opacity-90 transition cursor-pointer"
+                  disabled={loading}
+                  className="w-full bg-main text-white py-4 font-bold flex items-center justify-center gap-2 hover:opacity-90 transition cursor-pointer disabled:opacity-50"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                   <Send size={18} />
                 </button>
               </form>
