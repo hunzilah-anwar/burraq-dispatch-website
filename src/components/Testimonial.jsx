@@ -7,32 +7,82 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Since partnering with this dispatch team, our trucks stay loaded and profitable. Their communication and route planning have been outstanding.",
-    name: "Michael Anderson",
+      "Working with this dispatch team changed how I run my truck. They keep me loaded week after week and always negotiate fair rates.",
+    name: "Marcus Reynolds",
     role: "Owner Operator",
-    company: "Anderson Trucking LLC",
+    company: "Reynolds Freight",
     image:
-      "https://plus.unsplash.com/premium_photo-1770447616600-139515d59a39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsaWVudCUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=900&auto=format&fit=crop&q=80",
   },
   {
     id: 2,
     quote:
-      "The dispatchers consistently find high-paying loads and handle broker negotiations professionally. It has helped us grow our fleet faster.",
-    name: "David Wilson",
+      "Their dispatchers are proactive, not reactive. I get calls before I even ask about my next load, and paperwork is always sorted.",
+    name: "Anthony Brooks",
     role: "Fleet Manager",
-    company: "Wilson Freight",
+    company: "Brooks Transport Group",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=900&auto=format&fit=crop&q=80",
   },
   {
     id: 3,
     quote:
-      "Excellent support, quick load booking, and reliable updates. We spend less time searching and more time driving.",
-    name: "Robert Miller",
+      "I switched dispatch services twice before finding this team. The difference in communication and load quality is night and day.",
+    name: "Samuel Turner",
     role: "CDL Driver",
-    company: "Miller Logistics",
+    company: "Turner Hauling",
     image:
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?w=900&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?w=900&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 4,
+    quote:
+      "Empty miles used to eat into my profit every month. Since they started planning my routes, my truck barely sits idle.",
+    name: "Gregory Foster",
+    role: "Owner Operator",
+    company: "Foster Express LLC",
+    image:
+      "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=900&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 5,
+    quote:
+      "They handle broker calls, rate confirmations, and check-ins so I can focus on the road. It genuinely feels like having a business partner.",
+    name: "Patrick Coleman",
+    role: "Fleet Owner",
+    company: "Coleman Logistics",
+    image:
+      "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=900&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 6,
+    quote:
+      "Solid communication, fast responses, and they actually understand the lanes I like to run. My weekly revenue has gone up noticeably.",
+    name: "Douglas Harper",
+    role: "Truck Owner",
+    company: "Harper Trucking Co.",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=900&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 7,
+    quote:
+      "Available around the clock and never leaves me guessing about my next load. That reliability is worth more than anything else to me.",
+    name: "Ethan Walsh",
+    role: "Operations Manager",
+    company: "Walsh Freight Solutions",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&auto=format&fit=crop&q=80",
+  },
+  {
+    id: 8,
+    quote:
+      "From rate negotiation to tracking, everything is handled professionally. It's the most stress-free my trucking business has ever been.",
+    name: "Victor Simmons",
+    role: "Owner Operator",
+    company: "Simmons Transport",
+    image:
+      "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=900&auto=format&fit=crop&q=80",
   },
 ];
 

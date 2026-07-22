@@ -83,7 +83,7 @@ const Header = () => {
             ))}
 
             <li
-              className="relative group"
+              className="relative group text-[16px]"
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >

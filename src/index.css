@@ -1,9 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  /* --font-roboto-condensed: "Roboto Condensed", sans-serif; */
+  --font-roboto-condensed: "Roboto Slab", serif;
+  --font-sans: "Roboto Slab", serif;
   --color-primary: #050606;
   --color-secondary: #f5c002;
   --color-main: #f02d0c;
+}
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
 }

@@ -163,36 +163,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-20 font-roboto-condensed">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-black/5 backdrop-blur-sm border border-black/10 p-8 text-center hover:border-main transition duration-300">
-              <h3 className="text-5xl font-bold text-main mb-3">500+</h3>
-              <p className="text-black text-lg font-medium">
-                Loads Booked Monthly
-              </p>
-            </div>
-
-            <div className="bg-black/5 backdrop-blur-sm border border-black/10 p-8 text-center hover:border-main transition duration-300">
-              <h3 className="text-5xl font-bold text-main mb-3">98%</h3>
-              <p className="text-black text-lg font-medium">
-                On-Time Coordination
-              </p>
-            </div>
-
-            <div className="bg-black/5 backdrop-blur-sm border border-black/10 p-8 text-center hover:border-main transition duration-300">
-              <h3 className="text-5xl font-bold text-main mb-3">24/7</h3>
-              <p className="text-black text-lg font-medium">Dispatch Support</p>
-            </div>
-
-            <div className="bg-black/5 backdrop-blur-sm border border-black/10 p-8 text-center hover:border-main transition duration-300">
-              <h3 className="text-5xl font-bold text-main mb-3">50+</h3>
-              <p className="text-black text-lg font-medium">Trusted Carriers</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="md:p-20 p-10 bg-[rgba(240,227,211,.5)] font-roboto-condensed">
+      <section className="md:p-20 p-5 pt-20 bg-[rgba(240,227,211,.5)] font-roboto-condensed">
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
           <div className="w-full h-full">
             <img
@@ -252,7 +223,7 @@ const Home = () => {
         </div>
       </section>
       {/* Service Details */}
-      <section className="py-24 bg-white">
+      <section className="md:py-24 py-10 bg-white">
         <div className="text-center max-w-5xl mx-auto px-6 mb-20">
           <h1 className="font-black text-4xl mb-4">
             Truck Dispatching Service for Owner Operator
@@ -265,10 +236,10 @@ const Home = () => {
         </div>
         <div className="max-w-7xl mx-auto px-6">
           {servicesData.map((service) => (
-            <div key={service.id} className="grid lg:grid-cols-5 gap-15 mb-6 bg-gray-100 p-8 rounded-[40px_0px_40px_0px] border border-gray-300">
+            <div key={service.id} className="grid lg:grid-cols-5 md:gap-15 mb-6 bg-gray-100 md:p-8 p-4 rounded-[40px_0px_40px_0px] border border-gray-300">
               {/* Left Content */}
-              <div className="lg:col-span-3">
-                <h2 className="text-2xl lg:text-3xl text-center bg-white py-4 rounded-[40px_0_40px_0] font-black text-primary leading-tight border border-main/50 shadow-[inset_0_0_60px_-15px_rgba(255,5,5,0.52)]">
+              <div className="lg:col-span-3 pb-10">
+                <h2 className="text-2xl lg:text-3xl text-center bg-white py-4 rounded-[40px_0_40px_0] font-black text-primary leading-tight border border-black/20">
                   {service.title}
                 </h2>
 

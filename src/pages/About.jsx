@@ -35,9 +35,9 @@ const About = () => {
   ];
 
   const stats = [
-    { number: "500+", title: "Loads Booked Monthly" },
+    { number: "4000+", title: "Loads Booked Monthly" },
     { number: "98%", title: "On-Time Coordination" },
-    { number: "50+", title: "Trusted Carriers" },
+    { number: "70+", title: "Trusted Carriers" },
     { number: "24/7", title: "Dispatch Support" },
   ];
 
